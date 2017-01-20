@@ -44,7 +44,7 @@ const SecurityContext = require(__dirname+'/Server_Side/tools/security/securityc
 // Object of users' names linked to their security context
 let usersToSecurityContext = {};
 
-let port = process.env.VCAP_APP_PORT || configFile.config.appPort;
+let port = process.env.PORT || configFile.config.appPort;
 
 
 ////////  Pathing and Module Setup  ////////
@@ -315,7 +315,7 @@ let credentials;
 let webAppAdminPassword = configFile.config.registrar_password;
 if (process.env.VCAP_SERVICES) {
     console.log('\n[!] VCAP_SERVICES detected');
-    port = process.env.VCAP_APP_PORT;
+    port = process.env.PORT;
 } else {
     port = configFile.config.appPort;
 }
