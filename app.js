@@ -320,6 +320,8 @@ if (process.env.VCAP_SERVICES) {
     port = configFile.config.appPort;
 }
 
+console.log(process.env);
+
 // Setup HFC
 let chain = hfc.newChain('myChain');
 //This is the location of the key store HFC will use. If running locally, this directory must exist on your machine
